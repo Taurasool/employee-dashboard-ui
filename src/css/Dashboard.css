@@ -1,0 +1,502 @@
+/* ==========================
+   Reset
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+/* ==========================
+   Layout
+========================== */
+
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+/* ==========================
+   Navbar
+========================== */
+
+.navbar {
+  background: #fff !important;
+  border-bottom: 1px solid #e8edf3;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #212529;
+  white-space: nowrap;
+}
+
+.navbar .form-control {
+  width: 260px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.navbar .btn {
+  height: 45px;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 0 22px;
+}
+
+/* ==========================
+   Search Card
+========================== */
+
+.search-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.search-card .card-header {
+  background: linear-gradient(135deg, #0d6efd, #3b82f6);
+  color: white;
+  border: none;
+  padding: 16px 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.search-card .card-body {
+  padding: 22px;
+}
+
+.search-card label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.search-card .form-control,
+.search-card .form-select {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid #dfe3e8;
+  margin-bottom: 18px;
+  box-shadow: none;
+}
+
+.search-card .form-control:focus,
+.search-card .form-select:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.search-btn {
+  width: 100%;
+  height: 46px;
+  border: none;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.search-btn:hover {
+  background: #0b5ed7;
+}
+
+/* ==========================
+   Employee Directory
+========================== */
+
+.employee-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.employee-card .card-header {
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: #fff;
+  border: none;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.employee-card .card-header h5 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.employee-card .badge {
+  background: #fff;
+  color: #198754;
+  border-radius: 30px;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* ==========================
+   Table
+========================== */
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  margin: 0;
+  vertical-align: middle;
+}
+
+.table thead {
+  background: #212529;
+  color: #fff;
+}
+
+.table thead th {
+  border: none;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 15px;
+  vertical-align: middle;
+  white-space: nowrap;
+  border-color: #edf2f7;
+}
+
+.table tbody tr {
+  transition: 0.25s;
+}
+
+.table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.table tbody td:first-child {
+  color: #198754;
+  font-weight: 700;
+}
+
+.table tbody td:nth-child(2) {
+  font-weight: 600;
+}
+
+/* ==========================
+   Action Buttons
+========================== */
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.action-buttons .btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-view {
+  background: #0dcaf0;
+  color: #fff;
+}
+
+.btn-view:hover {
+  background: #31d2f2;
+}
+
+.btn-edit {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #0b5ed7;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background: #bb2d3b;
+}
+
+/* ==========================
+   Employee Form
+========================== */
+
+.employee-form {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.employee-form h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.employee-form .form-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.employee-form .form-control,
+.employee-form .form-select {
+  height: 46px;
+  border-radius: 10px;
+  border: 1px solid #dcdfe5;
+  box-shadow: none;
+}
+
+.employee-form .form-control:focus,
+.employee-form .form-select:focus {
+  border-color: #198754;
+  box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.15);
+}
+
+.employee-form textarea {
+  border-radius: 10px;
+}
+
+/* ==========================
+   Global Buttons
+========================== */
+
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+  background: #0b5ed7;
+}
+
+.btn-success {
+  background: #198754;
+  border-color: #198754;
+}
+
+.btn-success:hover {
+  background: #157347;
+}
+
+.btn-danger {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background: #bb2d3b;
+}
+
+.btn-info {
+  background: #0dcaf0;
+  border-color: #0dcaf0;
+  color: #fff;
+}
+
+.btn-info:hover {
+  background: #31d2f2;
+}
+
+
+/* ==========================
+   Pagination
+========================== */
+
+.pagination {
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.pagination .page-item {
+  margin-left: 5px;
+}
+
+.pagination .page-link {
+  border: none;
+  border-radius: 8px;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  transition: 0.25s;
+}
+
+.pagination .page-link:hover {
+  background: #198754;
+  color: #fff;
+}
+
+.pagination .active .page-link {
+  background: #198754;
+  color: #fff;
+}
+
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eef2f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b8c1cc;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8d99a6;
+}
+
+
+/* ==========================
+   Utility Classes
+========================== */
+
+.shadow-card {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.rounded-16 {
+  border-radius: 16px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-muted-small {
+  color: #777;
+  font-size: 13px;
+}
+
+
+/* ==========================
+   Responsive
+========================== */
+
+@media (max-width: 992px) {
+
+  .navbar .container-fluid {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 15px;
+  }
+
+  .navbar .d-flex {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navbar .form-control {
+    width: 100% !important;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+
+  .employee-form,
+  .employee-card,
+  .search-card {
+    margin-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .navbar h2 {
+    font-size: 22px;
+  }
+
+  .table {
+    font-size: 13px;
+  }
+
+  .action-buttons .btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .employee-form {
+    padding: 18px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .navbar h2 {
+    font-size: 20px;
+  }
+
+  .navbar .btn {
+    width: 100%;
+  }
+
+  .employee-card .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+
+}
