@@ -2,7 +2,8 @@ import axios from "axios";
 import type { Employee } from "../models/Employee";
 import AuthService from "./AuthService";
 
-const API_URL = "http://localhost:5000/api/employees";
+const API_URL =
+  "https://backend-git-main-tauseef-rasools-projects.vercel.app/api/employees";
 
 const getHeaders = () => {
   const session = AuthService.getSession();
@@ -16,6 +17,7 @@ const getEmployees = async (): Promise<Employee[]> => {
   const response = await axios.get(API_URL, {
     headers: getHeaders(),
   });
+
   return response.data;
 };
 
@@ -25,6 +27,7 @@ const getEmployeeById = async (
   const response = await axios.get(`${API_URL}/${id}`, {
     headers: getHeaders(),
   });
+
   return response.data;
 };
 
@@ -32,6 +35,7 @@ const addEmployee = async (employee: Employee) => {
   const response = await axios.post(API_URL, employee, {
     headers: getHeaders(),
   });
+
   return response.data;
 };
 
@@ -39,9 +43,14 @@ const updateEmployee = async (
   id: string,
   employee: Employee
 ) => {
-  const response = await axios.put(`${API_URL}/${id}`, employee, {
-    headers: getHeaders(),
-  });
+  const response = await axios.put(
+    `${API_URL}/${id}`,
+    employee,
+    {
+      headers: getHeaders(),
+    }
+  );
+
   return response.data;
 };
 
@@ -49,6 +58,7 @@ const deleteEmployee = async (id: string) => {
   const response = await axios.delete(`${API_URL}/${id}`, {
     headers: getHeaders(),
   });
+
   return response.data;
 };
 

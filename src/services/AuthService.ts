@@ -1,7 +1,9 @@
 import axios from "axios";
 import type { AuthResponse, User } from "../models/User";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL =
+  "https://backend-git-main-tauseef-rasools-projects.vercel.app/api";
+
 const TOKEN_KEY = "employee-dashboard-token";
 const USER_KEY = "employee-dashboard-user";
 
@@ -14,10 +16,10 @@ export interface RegisterPayload {
   username: string;
   email: string;
   password: string;
-  role?: "admin" | "employee";
+  role: "admin" | "employee";
 }
 
-const getSession = (): { token: string; user: User } | null => {
+const getSession = (): AuthResponse | null => {
   const token = localStorage.getItem(TOKEN_KEY);
   const storedUser = localStorage.getItem(USER_KEY);
 
@@ -29,17 +31,43 @@ const getSession = (): { token: string; user: User } | null => {
     return {
       token,
       user: JSON.parse(storedUser) as User,
+      message: "",
     };
   } catch {
     return null;
   }
 };
 
-const isAuthenticated = (): boolean => Boolean(getSession());
+const login = async (
+  payload: LoginPayload
+): Promise<AuthResponse> => {
+  const response = await axios.post(
+    `${API_URL}/auth/login`,
+    payload
+  );
 
-const storeSession = (token: string, user: User) => {
-  localStorage.setItem(TOKEN_KEY, token);
-  localStorage.setItem(USER_KEY, JSON.stringify(user));
+  const data = response.data;
+
+  localStorage.setItem(TOKEN_KEY, data.token);
+  localStorage.setItem(USER_KEY, JSON.stringify(data.user));
+
+  return data;
+};
+
+const register = async (
+  payload: RegisterPayload
+): Promise<AuthResponse> => {
+  const response = await axios.post(
+    `${API_URL}/auth/register`,
+    payload
+  );
+
+  const data = response.data;
+
+  localStorage.setItem(TOKEN_KEY, data.token);
+  localStorage.setItem(USER_KEY, JSON.stringify(data.user));
+
+  return data;
 };
 
 const logout = () => {
@@ -47,34 +75,11 @@ const logout = () => {
   localStorage.removeItem(USER_KEY);
 };
 
-const login = async (
-  payload: LoginPayload
-): Promise<AuthResponse> => {
-  const response = await axios.post(`${API_URL}/auth/login`, payload);
-
-  const { token, user } = response.data;
-  storeSession(token, user);
-
-  return response.data as AuthResponse;
-};
-
-const register = async (
-  payload: RegisterPayload
-): Promise<AuthResponse> => {
-  const response = await axios.post(`${API_URL}/auth/register`, payload);
-
-  const { token, user } = response.data;
-  storeSession(token, user);
-
-  return response.data as AuthResponse;
-};
-
 const AuthService = {
-  getSession,
-  isAuthenticated,
   login,
   register,
   logout,
+  getSession,
 };
 
 export default AuthService;
